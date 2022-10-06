@@ -2,6 +2,261 @@
     margin: 0;
     box-sizing: border-box;
 }
-.todo{
-    text-transform: uppercase;
+body{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.wrapper {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -2px 2px 4px rgb(0 0 0 / 30%);
+    min-width: 50%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+input[type="text"] {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    border: 0;
+    background-color: #eaf1fb;
+    outline: none;
+    font-size: 14px;
+    padding-left: 14px;
+}
+input[type="text"]:focus {
+    background: white;
+    box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+}
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+.todobtn:active {
+    transform: scale(1.03);
+}
+.todobtn:hover {
+    background-color: #04AA6D;
+}
+.todobtn {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 0px 8px 8px 0px;
+    border: 0;
+    height: 32px;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+    padding: 0 16px;
+    background-color: tan;
+}
+.check:checked .checklabel {
+    text-decoration: line-through;
+}
+.status-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 4px;
+    gap: 10px;
+    position: relative;
+    overflow: auto;
+}
+
+.status {
+    color: darkslategrey;
+    cursor: pointer;
+    font-weight: 600;
+}
+.status-option button {
+    background-color: #ff000087;
+    font-size: inherit;
+    color: #fff;
+    border-radius: 6px;
+    border: 0;
+    width: 100%;
+    padding: 6px 8px;
+}
+.status-option button:hover{
+    background-color: #bb1d1da9;
+}
+.status-option button:active{
+    color:antiquewhite;
+    background-color: #875a5a;
+}
+.status-live {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+}
+.status:hover {
+    text-decoration: underline 1px gray;
+    color: darkblue;
+}
+
+.active{
+    color:blue ;
+}
+.todo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+label {
+    display: flex;
+    gap: 8px;
+}
+.todo-container {
+    padding: 12px;
+    position: relative;
+}
+.todo-container:before {
+    top: 0;
+    content: '';
+    left: 0;
+    width: 100%;
+    position: absolute;
+    border-bottom: 2px solid lavenderblush;
+}
+.todo-container:after {
+    content: '';
+    position: absolute;
+    border: 1px solid lavenderblush;
+    width: 10%;
+    height: 6px;
+    border-radius: 10px;
+    background-color: lavenderblush;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+}
+input[type="checkbox"]{
+    height: 18px;
+    width: 18px;
+}
+input[type="checkbox"]:checked + p {
+    text-decoration: line-through;
+    opacity: .6;
+}
+.logo:after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    right: 8px;
+    background: #875a5a;
+    display: inline-block;
+    border-radius: 100%;
+}
+.logo {
+    height: 5px;
+    width: 5px;
+    background: #875a5a;
+    display: inline-block;
+    border-radius: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.logo::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    left: 8px;
+    background: #875a5a;
+    display: inline-block;
+    border-radius: 100%;
+}
+.fixtodo {
+    display: flex;
+    cursor: pointer;
+    height: 14px;
+    width: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.tasklogic {
+    display:none;
+    position: absolute;
+    font-size: .8rem;
+}
+.fixtodo:hover .tasklogic{
+    display: block;
+}
+.tasklogic:before {
+    content: '';
+    position: absolute;
+    height: 8%;
+    left: 38%;
+    top: 2px;
+    width: 16px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.editdelete {
+    display: flex;
+}
+
+.edit {
+    width: 36px;
+    height: 20px;
+    text-align: center;
+    background-color: darkseagreen;
+    padding-top: 2px;
+    border-radius: 0 0 0 6px;
+    color: #fff;
+}
+.edit:active{
+    background-color: #875a5a;
+}
+.delete:active {
+    background-color: #9e0f3c;
+}
+
+
+
+.task {
+    font-size: 13px;
+    padding-top: 8px;
+    cursor: context-menu;
+    height: 26px;
+    width: 100%;
+    text-align: center;
+    background: #f0dcdc;
+    border-radius: 6px 6px 0 0;
+    font-weight: 600;
+}
+
+
+
+.delete {
+    width: 36px;
+    height: 20px;
+    text-align: center;
+    background: #8b7241ba;
+    padding-top: 2px;
+    border-radius: 0 0 6px 0;
+    color: #fff;
 }
