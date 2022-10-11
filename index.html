@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo-list</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <title>todolist</title>
+    <link rel="stylesheet" href="todo.css">
 </head>
+
 <body>
     <div class="wrapper">
         <div class="main">
-            <div class="header todo-input">
+            <div class="header todo-input" id="taskinput">
                 <input type="text" placeholder="write your task here...">
-                <button class="todobtn">Add</button>
+                <button class="todobtn" purpose="add">Add</button>
             </div>
             <section class="todo-Status section">
                 <div class="status-option">
@@ -22,112 +24,30 @@
                         <span id="finished" class="status">Finished</span>
                     </div>
                     <div>
-                        <button  type="button">Remove all</button>
+                        <button type="button" id="removebtn">Remove all</button>
                     </div>
                 </div>
-                <ul class="todo-container">
-                    <li class="todo">
+                <ul class="todo-container" id="tasklist">
+                    <!-- <li class="todo">
                         <label for="todo1">
                             <input type="checkbox" id="todo1">
                             <p class="text">hair cutting i evening</p>
                         </label>
                         <div class="fixtodo">
-                            <span class="logo"></span>
-                            <div class="tasklogic">
-                                <div class="task">Task</div>
-                                <div class="editdelete">
-                                    <spam class="edit">edit</spam>
-                                    <spam class="delete">del</spam>
-                                </div>
+                            <div class="fixtodo">
+                                <span class="logo edits"></span>
+                                <div class="tasklogic delteto"></div>
                             </div>
                         </div>
-                    </li>
-                    <li class="todo">
-                        <label for="todo2">
-                            <input type="checkbox" id="todo2">
-                            <p>go to gym and take booster</p>
-                        </label>
-                        <div class="fixtodo">
-                            <span class="logo"></span>
-                            <div class="tasklogic">
-                                <div class="task">Task</div>
-                                <div class="editdelete">
-                                    <spam class="edit">edit</spam>
-                                    <spam class="delete">del</spam>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="todo">
-                        <label for="todo3">
-                            <input type="checkbox" id="todo3">
-                            <p>turn of lghts and save bill</p>
-                        </label>
-                        <div class="fixtodo">
-                            <span class="logo"></span>
-                            <div class="tasklogic">
-                                <div class="task">Task</div>
-                                <div class="editdelete">
-                                    <spam class="edit">edit</spam>
-                                    <spam class="delete">del</spam>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="todo">
-                        <label for="todo4" class="checklabel">
-                            <input type="checkbox" id="todo4" class="check">
-                            <p>make a todolist for future plan</p>
-                        </label>
-                        <div class="fixtodo">
-                            <span class="logo"></span>
-                            <div class="tasklogic">
-                                <div class="task">Task</div>
-                                <div class="editdelete">
-                                    <spam class="edit">edit</spam>
-                                    <spam class="delete">del</spam>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>  
+                    </li> -->
+                </ul>
             </section>
-            <ul class="todo-container">
-                <li class="todo">
-                    <label for="todo1">
-                        <input type="checkbox" checked id="todo1">
-                        <p class="text">hair cutting i evening</p>
-                    </label>
-                    <div class="fixtodo">
-                        <span class="logo"></span>
-                        <div class="tasklogic">
-                            <div class="task">Task</div>
-                            <div class="editdelete">
-                                <spam class="edit">edit</spam>
-                                <spam class="delete">del</spam>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="todo">
-                    <label for="todo2">
-                        <input type="checkbox" checked id="todo2">
-                        <p>go to gym and take booster</p>
-                    </label>
-                    <div class="fixtodo">
-                        <span class="logo"></span>
-                        <div class="tasklogic">
-                            <div class="task">Task</div>
-                            <div class="editdelete">
-                                <spam class="edit">edit</spam>
-                                <spam class="delete">del</spam>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+            <ul class="todo-container" id="taskDone">
+                <p>no task complted</p>
             </ul>
         </div>
     </div>
-    <script src="./javascript/todo.js"></script>
+    <script src="todo.js"></script>
 </body>
+
 </html>
