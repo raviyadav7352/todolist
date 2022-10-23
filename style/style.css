@@ -22,7 +22,24 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: -2px 2px 4px rgb(0 0 0 / 30%);
-    min-width: 50%;
+    min-width: 60%;
+    height: 90vh;
+    position: relative;
+}
+
+@media(min-width:200px) and (max-width:576px) {
+    .main {
+        width: 90%;
+        overflow: hidden;
+    }
+
+}
+
+@media(min-width:577px) and (max-width:900px) {
+    .main {
+        width: 80%;
+    }
+
 }
 
 .section {
@@ -43,6 +60,7 @@ input[type="text"] {
     outline: none;
     font-size: 14px;
     padding-left: 14px;
+    padding-right: 5.1rem;
 }
 
 input[type="text"]:focus {
@@ -87,10 +105,10 @@ input[type="text"]:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 8px 4px;
-    gap: 10px;
+    margin: 8px 0px;
+    gap: 1vw;
     position: relative;
-    overflow: auto;
+    width: 100%;
 }
 
 .status {
@@ -106,6 +124,7 @@ input[type="text"]:focus {
     border-radius: 6px;
     border: 0;
     width: 100%;
+    max-height: 8vw;
     padding: 6px 8px;
 }
 
@@ -120,8 +139,7 @@ input[type="text"]:focus {
 
 .status-live {
     display: flex;
-    gap: 10px;
-    font-size: 16px;
+    gap: 1vw;
 }
 
 .status:hover {
@@ -145,12 +163,52 @@ label {
 }
 
 .todo-container {
-    padding: 12px;
-    position: relative;
+    padding: 10px;
+    max-height: 47vh;
+    overflow: auto;
 }
 
-.todo-container:before {
-    top: 0;
+.todo-container-completed {
+    padding: 10px;
+    max-height: 18vh;
+    overflow: auto;
+}
+
+.finished-task {
+    position: relative;
+    margin-top: 20px;
+}
+
+.finished-task:before {
+    top: -16px;
+    content: 'finished';
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    font-size: 50%;
+    font-weight: 600;
+    text-transform: capitalize;
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    border: 2px solid lavenderblush;
+    background: darkgrey;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.finished-task:after {
+    top: -10px;
+    content: '';
+    left: 50%;
+    width: 44%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-bottom: 2px solid lavenderblush;
+}
+
+.main:before {
+    top: 106px;
     content: '';
     left: 0;
     width: 100%;
@@ -158,22 +216,32 @@ label {
     border-bottom: 2px solid lavenderblush;
 }
 
-.todo-container:after {
-    content: '';
+.main:after {
+    content: 'Thanks';
     position: absolute;
-    border: 1px solid lavenderblush;
     width: 10%;
-    height: 6px;
+    height: 1.5vh;
     border-radius: 10px;
-    background-color: lavenderblush;
+    background-color: #875a5ab5;
     left: 50%;
-    bottom: -5px;
+    bottom: 7px;
+    font-size: 8px;
+    text-align: center;
+    color: #aa8a8a;
     transform: translateX(-50%);
+}
+
+.main:active::after {
+    color: wheat;
 }
 
 input[type="checkbox"] {
     height: 18px;
     width: 18px;
+}
+
+.text {
+    width: 52vw;
 }
 
 input[type="checkbox"]:checked+p {
@@ -217,6 +285,7 @@ input[type="checkbox"]:checked+p {
 
 .logo:hover {
     box-shadow: 0 0px 2px rgb(0 0 0 / 30%);
+    background-color: #8e7a0c76;
 }
 
 .logo:active {
@@ -270,8 +339,34 @@ input[type="checkbox"]:checked+p {
     background: #0b7e40;
     transform: rotate(132deg);
 }
+
+.tasklogic:hover {
+    box-shadow: 0 0px 2px rgb(0 0 0 / 30%);
+    background-color: #8e7a0c76;
+}
+
+.tasklogic:active {
+    background-color: rgb(28, 188, 151);
+}
+
 .message {
     color: maroon;
     text-align: center;
     font-family: cursive;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gainsboro;
+    border-radius: 10px;
 }
