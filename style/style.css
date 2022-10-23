@@ -23,7 +23,7 @@ body {
     border-radius: 10px;
     box-shadow: -2px 2px 4px rgb(0 0 0 / 30%);
     min-width: 60%;
-    height: 90vh;
+    height: 80vh;
     position: relative;
 }
 
@@ -164,13 +164,13 @@ label {
 
 .todo-container {
     padding: 10px;
-    max-height: 47vh;
+    max-height: 39vh;
     overflow: auto;
 }
 
 .todo-container-completed {
     padding: 10px;
-    max-height: 18vh;
+    max-height: 17vh;
     overflow: auto;
 }
 
