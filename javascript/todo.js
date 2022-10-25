@@ -59,8 +59,6 @@ document.addEventListener("click", function (event) {
 
     let element = event.target;
     let purpose = element.getAttribute("purpose");
-    //console.log(purpose)
-    console.log(element)
     if (element == removeBtn) {
         todoLists.splice(0, todoLists.length);
         // taskInputData.value = ''

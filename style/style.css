@@ -9,7 +9,7 @@ body {
 }
 
 .wrapper {
-    min-height: 100vh;
+    height: 100vh;
     width: 100vw;
     background-color: beige;
     display: flex;
@@ -23,7 +23,7 @@ body {
     border-radius: 10px;
     box-shadow: -2px 2px 4px rgb(0 0 0 / 30%);
     min-width: 60%;
-    height: 80vh;
+    max-height: 80vh;
     position: relative;
 }
 .main:before {
@@ -63,9 +63,13 @@ body {
 @media(min-width:200px) and (max-width:576px) {
     .main {
         width: 90%;
+        max-height:90vh;
+        margin-top:5%;
         overflow: hidden;
     }
-
+    .wrapper {
+        align-items:start;
+    }
 }
 
 @media(min-width:577px) and (max-width:900px) {
@@ -196,14 +200,14 @@ label {
 }
 
 .todo-container {
-    padding: 10px;
-    max-height: 39vh;
+    padding: 0 10px;
+    max-height: 35vh;
     overflow: auto;
 }
 
 .todo-container-completed {
-    padding: 10px;
-    max-height: 17vh;
+    padding: 0 10px;
+    max-height: 16vh;
     overflow: auto;
 }
 
