@@ -7,21 +7,28 @@ const removeBtn = document.querySelector("#removebtn");
 const taskInput = document.querySelector("#taskinput").children;
 const taskInputData = taskInput[0];
 const taskAddBtn = taskInput[1];
+let todoLists = [];
 
-
-// if(taskcheck.checked == true){
-//     taskcheck.style.fontSize="23px"
-// }
 let edittask;
 let istaskedit = true
-// const deletetask =document.getElementById("delete");
-// const edittask =document.getElementById("edit");
 
-const todoLists = [
+const todoData = [
     { id: 1, task: "buy a small diary", status: "pending" },
     { id: 2, task: "go to dmart for shoping", status: "pending" },
     { id: 3, task: "learn all array method", status: "pending" }
 ];
+function handleData(){
+    todoLists= JSON.parse(localStorage.getItem("taskData"))
+    if(todoLists == null){
+        localStorage.setItem('taskData', JSON.stringify(todoData))
+        todoLists =JSON.parse(localStorage.getItem("taskData"))
+    }
+}
+function syncTodoData(todoData){
+    localStorage.setItem('taskData', JSON.stringify(todoData))
+}
+handleData()
+
 //rendering todolist
 showTask(todoLists)
 
@@ -29,15 +36,16 @@ document.addEventListener("keydown", function (event) {
     if (event?.key === 'Enter' && taskInputData.value.length) {
         if (istaskedit && taskInputData.value.length) {
             let valuedata = { id: Math.random(), status: "pending", task: taskInputData.value.trim() };
-            console.log(valuedata)
             taskInputData.value = ''
             todoLists.unshift(valuedata)
+            syncTodoData(todoLists)
             showTask(todoLists)
 
 
 
         } else {
             todoLists[edittask].task = taskInputData.value
+            syncTodoData(todoLists)
             showTask(todoLists)
             taskInputData.value = ''
             istaskedit = true
@@ -54,9 +62,9 @@ document.addEventListener("click", function (event) {
     //console.log(purpose)
     console.log(element)
     if (element == removeBtn) {
-        console.log("delelelew")
         todoLists.splice(0, todoLists.length);
         // taskInputData.value = ''
+        syncTodoData(todoLists)
         showTask(todoLists)
         istaskedit = true
 
@@ -64,15 +72,16 @@ document.addEventListener("click", function (event) {
     if (element == taskAddBtn) {
         if (istaskedit && taskInputData.value.length) {
             let valuedata = { id: Math.random(), status: "pending", task: taskInputData.value.trim() };
-            console.log(valuedata)
             taskInputData.value = ''
             todoLists.unshift(valuedata)
+            syncTodoData(todoLists)
             showTask(todoLists)
 
 
 
         } else {
             todoLists[edittask].task = taskInputData.value
+            syncTodoData(todoLists)
             showTask(todoLists)
             taskInputData.value = ''
             istaskedit = true
@@ -89,18 +98,20 @@ document.addEventListener("click", function (event) {
         //     showTask(todoLists)}
         edittask = taskids
         istaskedit = false
+        syncTodoData(todoLists)
 
     } else if (purpose == "delete") {
         let taskid = element.getAttribute("id")
         let task = todoLists.findIndex(todo => todo.id == taskid)
-        console.log(task)
         todoLists.splice(task, 1)
+        syncTodoData(todoLists)
         showTask(todoLists)
         taskInputData.value = ''
     }
     if (purpose == "checking") {
         let taskcheck = Array.from(document.getElementsByClassName("check"));
         checkedtask(taskcheck)
+        syncTodoData(todoLists)
         showTask(todoLists)
     }
 
@@ -112,7 +123,6 @@ let setTodo = ([todoCompleted])
 
 function checkedtask(taask) {
     taask.forEach((input, index) => {
-        console.log(input.checked, index);
         if (input.checked) {
             todoCompleted.push(todoLists[index])
             todoLists[index].status = "completed"

@@ -26,6 +26,39 @@ body {
     height: 80vh;
     position: relative;
 }
+.main:before {
+    top: 122px;
+    content: '';
+    left: 0;
+    width: 100%;
+    position: absolute;
+    border-bottom: 2px solid lavenderblush;
+}
+
+.main:after {
+    content: 'Thanks';
+    position: absolute;
+    width: 10%;
+    height: 1.5vh;
+    border-radius: 10px;
+    background-color: #875a5ab5;
+    left: 50%;
+    bottom: 7px;
+    font-size: 8px;
+    text-align: center;
+    color: #aa8a8a;
+    transform: translateX(-50%);
+}
+
+.main:active::after {
+    color: wheat;
+}
+.heading {
+    text-align: center;
+    margin: -12px 0 7px 0;
+    font-family: serif;
+    opacity: .7;
+}
 
 @media(min-width:200px) and (max-width:576px) {
     .main {
@@ -207,33 +240,7 @@ label {
     border-bottom: 2px solid lavenderblush;
 }
 
-.main:before {
-    top: 106px;
-    content: '';
-    left: 0;
-    width: 100%;
-    position: absolute;
-    border-bottom: 2px solid lavenderblush;
-}
 
-.main:after {
-    content: 'Thanks';
-    position: absolute;
-    width: 10%;
-    height: 1.5vh;
-    border-radius: 10px;
-    background-color: #875a5ab5;
-    left: 50%;
-    bottom: 7px;
-    font-size: 8px;
-    text-align: center;
-    color: #aa8a8a;
-    transform: translateX(-50%);
-}
-
-.main:active::after {
-    color: wheat;
-}
 
 input[type="checkbox"] {
     height: 18px;
@@ -352,9 +359,8 @@ input[type="checkbox"]:checked+p {
 .message {
     color: maroon;
     text-align: center;
-    font-family: cursive;
+    font-family: system-ui;
 }
-
 ::-webkit-scrollbar {
     width: 5px;
 
