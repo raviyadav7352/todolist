@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todolist</title>
+    <link rel="icon" href="images/img.jpg">
     <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
     <div class="wrapper">
         <div class="main">
             <h3 class="heading">TODOLIST</h3>
-            <div class="header todo-input" id="taskinput">
-                <input type="text" placeholder="write your task here...">
-                <button class="todobtn" purpose="add">Add</button>
+            <div class="inputbox todo-input" id="taskinput">
+                <input type="text" class='inputtask' placeholder="write your task here...">
+                <button class="addbtn" purpose="add">Add</button>
             </div>
+            <!-- todolist section -->
             <section class="todo-Status section">
                 <div class="status-option">
                     <div class="status-live">
-                        <span id="all" class="status    active">All</span>
-                        <span id="remaining" class="status">Remaining</span>
-                        <span id="finished" class="status">Finished</span>
+                        <pre class="status"> Your-Todo's</pre>
                     </div>
                     <div>
                         <button type="button" id="removebtn">Remove all</button>
@@ -40,5 +38,4 @@
     </div>
     <script src="javascript/todo.js"></script>
 </body>
-
 </html>
