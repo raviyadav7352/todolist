@@ -163,6 +163,6 @@
                 let textmessage = `<p class="message">No any task completed</p>`
                 taskDoneList.innerHTML = textmessage
             }
-    }, 200);
+    }, 100);
     }
 })()

@@ -11,7 +11,7 @@ body {
 .wrapper {
     height: 100vh;
     width: 100vw;
-    background-image: beige;
+    background-color: beige;
     display: flex;
     justify-content: center;
     align-items: center;
